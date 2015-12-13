@@ -1,6 +1,6 @@
-# grunt-deploy
+# ovchinnikov.us website
 
-Deployin project
+http://ovchinnikov.us/
 
 ## Release History
 
