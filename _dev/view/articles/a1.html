@@ -1,0 +1,87 @@
+
+    <section ng-controller="PrismCtrl">
+        <h2>Деплой сайта, хранящегося на гитхабе</h2>
+        <img src="../img/article1.png" alt="" title=""/>
+        <p>Задача:</p>
+        <p>Есть простой сайт без CMS, авторизации и БД, который хранится в репозитории на гитхабе и необходимо иметь возможность в короткие сроки вносить в него изменения, добавлять статьи и вносить правки, а после этого загружать обновленную версию на продакшн сервер. Очевидно, что вручную производить манипуляции с файлами сайта по загрузке на FTP и коммитами на GIT долго, нудно и неинтересно. Воспользуемся связкой grunt+php+git. Порядок действий таков:</p>
+        <ol>
+            <li>Клонируем исходники сайта с github</li>
+            <li>Вносим изменения</li>
+            <li>На grunt выполняем операцию по отправке архива сайта целиком на продакшн сервер</li>
+            <li>Скрипт на grunt вызывает на сервере php функцию, которая разархивирует архив с версткой на сервере</li>
+            <li>Делаем коммит</li>
+            <li>PROFIT!</li>
+        </ol>
+        
+        <p>Задачи на grunt по архивации и отправке файла архива на сервер простые. Единственное, что необходимо учесть - это то, что доступы ftp, по которым скрипт будет отправлять архив, могут быть скомпроментированы будучи закоммиченными. Поэтому их выносим в отдельный файл и ставим на этот файли игнор.</p>
+        
+        <p>Скрипт отправки по FTP, в котором сначала отправляется архив с версткой, а затем пхп файл для разархивировния:</p>
+        <pre class="line-numbers"><code class="language-javascript">var build_file  = 'app.zip', // архив с версткой
+    script_file = 'index.php', // php файл для разархивации
+    build_src   = path.resolve('./_build/', build_file),
+    script_src  = path.resolve('./server/', script_file);
+
+Ftp.put(build_src, options.path + build_file, function(hadError) {
+    if (!hadError){
+        grunt.log.writeln(chalk.bgGreen(build_file+" file transferred successfully!"));
+        grunt.log.writeln(chalk.bgMagenta("sending server script..."));
+        sendServerScript();
+        return false;
+    }else{
+        grunt.log.writeln(chalk.red(hadError));
+        return false;				
+    }   
+});
+
+function sendServerScript(){
+    Ftp.put(script_src, '/ovchinnikov.us/_build/' + script_file, function(hadError) {
+        if (!hadError){
+            grunt.log.writeln(chalk.bgGreen("server script transferred successfully!"));
+            grunt.event.emit('finish');
+        }else{
+            grunt.log.writeln(chalk.red(hadError));
+            return false;				
+        }
+        });	
+}
+        </code></pre>
+        
+        <p>PHP файл будем отправлять всегда, а то вдруг в нем будут важные изменения.</p>
+        
+        <p>Функция на PHP, лежащая на сервере, которая распаковывает архив с версткой:</p>
+        <pre class="line-numbers"><code class="language-javascript">$file = 'app.zip';
+$zip = new ZipArchive;
+$res = $zip->open($file);
+if ($res === TRUE) {
+    $zip->extractTo($_SERVER['DOCUMENT_ROOT']);
+    $zip->close();
+    echo 'unzip complete';
+    unlink($file);
+} else {
+    echo 'failed';
+}        </code></pre>
+        
+        <p>И, наконец, задача делающая запрос к php скрипту:</p>
+        
+        <pre class="line-numbers"><code class="language-javascript">function sendFiles(callback) {
+    var server = {
+        host: options.host || 'localhost',
+        //port: options.port || '21',
+        path: options.path || ''
+    };
+    http.request(server).on('response', function(response) {
+        var data = '';
+        response.on("data", function (chunk) {
+            data += chunk;
+        });
+        response.on('end', function () {
+            callback(data);
+        });
+    }).end();
+}
+        </code></pre>        
+        
+        <p>С такой связкой упрощается тестирование изменений без небоходимости отправки на сервер.</p>        
+        
+    </section>
+

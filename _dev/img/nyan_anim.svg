@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    
+    <path id="path1" style="fill: none; stroke-width: 1px;" d="M100 350 q0 -200 250 -300 q-50 550 150 100 q200 -150 250 250"></path>
+
+    <animateMotion xlink:href="#nyan1" begin="0.0s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan2" begin="0.5s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan3" begin="1.0s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan4" begin="1.5s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan5" begin="2.0s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan6" begin="2.5s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan7" begin="3.0s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan8" begin="3.5s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan9" begin="4.0s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan0" begin="4.5s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan00" begin="5.0s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan01" begin="5.5s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan02" begin="6.0s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan03" begin="6.5s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+    <animateMotion xlink:href="#nyan04" begin="7.0s" dur="10s" repeatCount="indefinite"> <mpath xlink:href="#path1"/> </animateMotion>
+
+    <image id="nyan0" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan1" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan2" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan3" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan4" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan5" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan6" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan7" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan8" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan9" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan00" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan01" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan02" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan03" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    <image id="nyan04" x="-30" y="-30" width="50" height="33" xlink:href="nyan.png"/>
+    
+</svg>

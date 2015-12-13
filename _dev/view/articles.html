@@ -1,0 +1,19 @@
+<article class="page_article anim" app-view-segment="1">
+    
+    <section>
+        <h2><a href="#/articles/a1">Деплой сайта</a></h2>
+        <p>Решение задачи по связке репозитория сайта с его продакшн сервером.</p>
+        <img src="../img/article1.png" alt="" title=""/>
+        <p><a href="#/articles/a1">Взглянуть...</a></p>
+    </section>
+    
+    <section>
+        <h2><a href="#/articles/a2">Движение объекта по произвольной траектории на SVG</a></h2>
+        <p>Статья о том, как реализовать движние объекта по произвольной траектории.</p>
+        <img src="../img/article2.png" alt="" title=""/>
+        <p><a href="#/articles/a2">Взглянуть...</a></p>
+    </section>
+    
+</article>
+    
+<a href="#{{ $routeSegment.name=='articles' ? 'home' : 'articles' | routeSegmentUrl}}" class="home_btn" title="назад">&lsaquo;</a>
