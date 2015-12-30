@@ -63,12 +63,13 @@ body{
 	-webkit-tap-highlight-color: #ea4c88;
 }
 
-main{position:relative;width:100%;height:100%;overflow: hidden;background: url('../../img/bg.png') repeat;display: block;}
+main{position:relative;width:100%;height:100%;overflow: hidden; background: url('../img/bg.png') repeat;display: block;}
 img{border:none; margin: 30px 0;}
-h1{color: #333;font: normal 9vw/9vw 'PT Sans', sans-serif;display:block;margin: 0 0 30px 0;}
-h2{font: normal 26pt/26pt 'PT Sans', sans-serif;margin: 0 0 20px 0;}
+h1{color: #333;font: normal 9vw/9vw 'PT Sans', sans-serif;display:block; margin: 0 0 30px 0;}
+h2{font: normal 28pt/28pt 'PT Sans', sans-serif; margin: 0 0 20px 0;}
 h2 a:hover{text-decoration:none;}
-h4{font-size: 14pt;font-weight: 900;margin: 20px 0 20px 40px;color: #e74c3c;}
+h4{font-size: 14pt;font-weight: 900;margin: 20px 0 20px 40px; color: #e74c3c;}
+p{font: normal 11pt/16pt 'PT Sans', sans-serif;}
 section{
     margin: 20px 0 50px 0;
 }

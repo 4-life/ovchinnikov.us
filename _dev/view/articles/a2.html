@@ -1,38 +1,37 @@
+<section ng-controller="PrismCtrl">
+    <h2>Движение объекта по произвольной траектории на SVG</h2>
+    <img src="../img/article2.png" alt="" title=""/>
 
-    <section ng-controller="PrismCtrl">
-        <h2>Движение объекта по произвольной траектории на SVG</h2>
-        <img src="../img/article2.png" alt="" title=""/>
-        
-        <p>SVG даровал нам замечательную возможность создания анимации дввижения любого элемента по произвольной траектории. Для создания траектории path воспользуемся <a href="http://anthonydugois.com/svg-path-builder/" target="_blank">сервисом генерации SVG</a>.</p>
-        
-        <p>Path получился очень коротким: "M100 350 q0 -200 250 -300 q-50 550 150 100 q200 -150 250 250"</p>
-        
-        <p>Код SVG:</p>
-        
-        <pre class="line-numbers"><code class="language-html"><xmp><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-    
-    <!-- Отображаем path, по которому будет двигаться объект -->
-    <path id="path1" style="fill: none; stroke-width: 1px;" 
-        d="M100 350 q0 -200 250 -300 q-50 550 150 100 q200 -150 250 250"></path>
-    
-    <!-- Связываем path, по которому будет двигаться объект с самим объектом по идентификатору -->
-    <animateMotion xlink:href="#nyan1" begin="0.0s" dur="10s" repeatCount="indefinite">
-        <mpath xlink:href="#path1"/>
-    </animateMotion>
-    <animateMotion xlink:href="#nyan2" begin="0.5s" dur="10s" repeatCount="indefinite">
-        <mpath xlink:href="#path1"/>
-    </animateMotion>
-    <animateMotion xlink:href="#nyan3" begin="1.0s" dur="10s" repeatCount="indefinite">
-        <mpath xlink:href="#path1"/>
-    </animateMotion>
-    
-    <!-- Указываем движемый обЪект, в данном случае картинка -->
-    <image id="nyan0" x="-30" y="-30" width="20" height="24" xlink:href="nyan.png"/>
-    <image id="nyan1" x="-30" y="-30" width="20" height="24" xlink:href="nyan.png"/>
-    <image id="nyan2" x="-30" y="-30" width="20" height="24" xlink:href="nyan.png"/>    
+    <p>SVG даровал нам замечательную возможность создания анимации дввижения любого элемента по произвольной траектории. Для создания траектории path воспользуемся <a href="http://anthonydugois.com/svg-path-builder/" target="_blank">сервисом генерации SVG</a>.</p>
+
+    <p>Path получился очень коротким: "M100 350 q0 -200 250 -300 q-50 550 150 100 q200 -150 250 250"</p>
+
+    <p>Код SVG:</p>
+
+    <pre class="line-numbers"><code class="language-html"><xmp><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+
+<!-- Отображаем path, по которому будет двигаться объект -->
+<path id="path1" style="fill: none; stroke-width: 1px;" 
+    d="M100 350 q0 -200 250 -300 q-50 550 150 100 q200 -150 250 250"></path>
+
+<!-- Связываем path, по которому будет двигаться объект с самим объектом по идентификатору -->
+<animateMotion xlink:href="#nyan1" begin="0.0s" dur="10s" repeatCount="indefinite">
+    <mpath xlink:href="#path1"/>
+</animateMotion>
+<animateMotion xlink:href="#nyan2" begin="0.5s" dur="10s" repeatCount="indefinite">
+    <mpath xlink:href="#path1"/>
+</animateMotion>
+<animateMotion xlink:href="#nyan3" begin="1.0s" dur="10s" repeatCount="indefinite">
+    <mpath xlink:href="#path1"/>
+</animateMotion>
+
+<!-- Указываем движемый обЪект, в данном случае картинка -->
+<image id="nyan0" x="-30" y="-30" width="20" height="24" xlink:href="nyan.png"/>
+<image id="nyan1" x="-30" y="-30" width="20" height="24" xlink:href="nyan.png"/>
+<image id="nyan2" x="-30" y="-30" width="20" height="24" xlink:href="nyan.png"/>    
 </svg></xmp></code></pre>
-        
-        <p>Результат:</p>
-        <object type="image/svg+xml" data="../img/nyan_anim.svg"></object>
-        
-    </section>
+
+    <p>Результат:</p>
+    <object type="image/svg+xml" data="../img/nyan_anim.svg"></object>
+
+</section>
